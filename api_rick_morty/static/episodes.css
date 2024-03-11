@@ -1,0 +1,50 @@
+/* locations.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ccdac5; /* Main background color */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #3a6027; /* Header text color */
+}
+
+header {
+    background-size: cover;
+    height: 300px; /* Adjust the height as needed */
+    margin: 0;
+    padding: 20px;
+    border: 5px solid #7e9575; /* Border color */
+    border-radius: 10px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff; /* Table background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #7e9575; /* Table border color */
+}
+
+th {
+    background-color: #a6f282; /* Header background color */
+}
+
+tr:hover {
+    background-color: #f5f5f5; /* Hovered row background color */
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Link text color */
+    font-weight: bold;
+}

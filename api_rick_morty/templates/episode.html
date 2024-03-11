@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Episódio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='episode.css') }}">
+</head>
+<body>
+    <h1>{{ episode['name'] }}</h1>
+    <p>Data que foi ao ar: {{ episode['air_date'] }}</p>
+    <p>Código do Episódio: {{ episode['episode'] }}</p>
+    <ul>
+        {% for related_episode in episodes %}
+            {% set related_episode_id = related_episode.split("/")|last %}
+            <li><a href="{{ url_for('episode', id=related_episode_id) }}">Episode {{ related_episode_id }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

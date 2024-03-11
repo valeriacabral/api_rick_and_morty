@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='character.css') }}">
+</head>
+<body>
+    <h1>{{ character['name'] }}</h1>
+    <p>Species: {{ character['species'] }}</p>
+    <p>Gender: {{ character['gender'] }}</p>
+    
+    <p>Origin: 
+        {% if 'id' in origin_location %}
+            <a href="{{ url_for('location', id=origin_location['id']) }}">{{ origin_location['name'] }}</a>
+        {% else %}
+            {{ origin_location }}
+        {% endif %}
+    </p>
+    
+    <p>Location: 
+        {% if 'id' in current_location %}
+            <a href="{{ url_for('location', id=current_location['id']) }}">{{ current_location['name'] }}</a>
+        {% else %}
+            {{ current_location }}
+        {% endif %}
+    </p>
+
+    <h2>Episodes:</h2>
+    <ul>
+        {% for episode in episodes %}
+            {% set episode_id = episode.split("/")|last %}
+            <li><a href="{{ url_for('episode', id=episode_id) }}">Episode {{ episode_id }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

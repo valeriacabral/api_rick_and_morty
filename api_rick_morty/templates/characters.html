@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Personagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='character.css') }}">
+</head>
+<body>
+    <h1>Lista de Personagens</h1>
+
+    <ul>
+        {% for character in characters %}
+            <li>{{ character['name'] }} - {{ character['species'] }} - {{ character['gender'] }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="pagination">
+        {% if pagination.total_pages > 1 %}
+            <span class="step-links">
+                {% if pagination.page > 1 %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ pagination.page - 1 }}">previous</a>
+                {% endif %}
+
+                {% for page_num in range(1, pagination.total_pages + 1) %}
+                    {% if page_num == pagination.page %}
+                        <span class="current">{{ page_num }}</span>
+                    {% else %}
+                        <a href="?page={{ page_num }}">{{ page_num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if pagination.page < pagination.total_pages %}
+                    <a href="?page={{ pagination.page + 1 }}">next</a>
+                    <a href="?page={{ pagination.total_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        {% endif %}
+    </div>
+</body>
+</html>

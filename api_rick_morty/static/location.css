@@ -1,0 +1,39 @@
+/* location.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34; /* Cor de fundo principal */
+    color: #ffffff; /* Cor do texto */
+    background-image: url('/static/img/rickandmorty.png');
+    background-size: 600px auto; /* Largura fixa de 400 pixels, altura automática */
+    background-position: center -10%; /* Centraliza a imagem verticalmente e a desloca para baixo */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+}
+
+h1 {
+    color: #7cf448; /* Cor do texto do cabeçalho */
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #61dafb; /* Cor do texto do link */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

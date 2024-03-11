@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episódios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='episodes.css') }}">
+</head>
+<body>
+    <h1>Episódios</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Data que foi ao ar</th>
+            <th>Código do episódio</th>
+        </tr>
+        {% for episode in episodes %}
+            <tr>
+                <td>{{ episode['name'] }}</td>
+                <td>{{ episode['air_date'] }}</td>
+                <td>{{ episode['episode'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
